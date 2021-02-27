@@ -66,7 +66,7 @@
   
 
 
-<div><img src="/images/sea.jpg" alt="sea"></div>
+{{-- <div><img src="/images/sea.jpg" alt="sea"></div> --}}
 
 
 

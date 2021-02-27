@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -22,6 +24,12 @@ use Illuminate\Support\Facades\Auth;
 Route::get( '/', [MainController::class, 'index']);
 Auth::routes();
 
+Route::middleware(['auth'])->prefix('admin')->group(function(){
+    Route::get('/', [AdminController::class, 'index']);
+    Route::resource('/user', [ProfileController::class]);
+});
+
+Route::get('/user/name', [ProfileController::class, 'index']);
 
 
 
